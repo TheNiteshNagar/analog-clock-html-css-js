@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+
+body {
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  background-color: #202020;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+}
+
+#hour {
+  position: absolute;
+  background-color: #f3f3f3;
+  width: 1%;
+  height: 35%;
+  top: 15.1%;
+  left: 49.6%;
+  z-index: 1;
+  transform-origin: bottom;
+}
+
+#minute {
+  position: absolute;
+  background-color: #3c8aff;
+  width: 1%;
+  height: 40%;
+  top: 10.1%;
+  left: 49.6%;
+  z-index: 2;
+  transform-origin: bottom;
+}
+
+#second {
+  position: absolute;
+  background-color: red;
+  width: 1%;
+  height: 45%;
+  top: 5.1%;
+  left: 49.6%;
+  z-index: 3;
+  transform-origin: bottom;
+}
+
+#circle {
+  position: absolute;
+  background-color: #919191;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 50%;
+  box-shadow: 0.2px 0.2px #cecece;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.time-digit {
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  color: white;
+}
+
+.time-digit>span {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 2vw;
+}
+
+.h3 {
+  position: absolute;
+  top: 50%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+}
+
+.h6 {
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.h9 {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+}
+
+.h12 {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.digital-clock{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 7vw;
+  height: 3vw;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  color: white;
+  font-size: 2.2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .container{
+    width: 70vw;
+    height: 70vw;
+  }
+  .time-digit > span {
+    font-size: 3vw;
+  }
+  .digital-clock{
+    font-size: 3.2vw;
+  }
+}
