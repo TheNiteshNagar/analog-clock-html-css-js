@@ -19,6 +19,14 @@ function runClock() {
   second.style.transform = `rotate(${secondDeg}deg)`
 }
 
+// Function to toggle Fullscreen
+(function(){
+  let isFullScreen = false
+  document.body.addEventListener('click', () => {
+    isFullScreen ? document.exitFullscreen() : document.body.requestFullscreen()
+    isFullScreen = !isFullScreen
+  })
+}())
 
 
 runClock();
