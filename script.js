@@ -23,6 +23,9 @@ function runClock() {
 (function(){
   let isFullScreen = false
   document.body.addEventListener('click', () => {
+    const audio = new Audio('./public/audio-uwu.mp3')
+    audio.currentTime = 0
+    audio.play()
     isFullScreen ? document.exitFullscreen() : document.body.requestFullscreen()
     isFullScreen = !isFullScreen
   })
