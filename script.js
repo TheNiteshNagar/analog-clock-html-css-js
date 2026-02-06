@@ -20,10 +20,10 @@ function runClock() {
 }
 
 // Function to toggle Fullscreen
+const audio = new Audio('./public/audio-uwu.mp3')
 (function(){
   let isFullScreen = false
   document.body.addEventListener('click', () => {
-    const audio = new Audio('./public/audio-uwu.mp3')
     audio.currentTime = 0
     audio.play()
     isFullScreen ? document.exitFullscreen() : document.body.requestFullscreen()
