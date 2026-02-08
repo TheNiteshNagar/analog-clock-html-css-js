@@ -1,5 +1,5 @@
-// set audio at global
-const audio = new Audio("./public/audio-uwu.mp3");
+// set audio at global - will be lazily initialized on first user interaction
+let audio = null;
 
 function runClock() {
   const date = new Date();
@@ -38,8 +38,20 @@ function runClock() {
 
 // play audio when click on middle in clock
 document.querySelector("#circle").addEventListener("click", () => {
+  // Initialize audio lazily on first user interaction
+  if (!audio) {
+    audio = new Audio("./public/audio-uwu.mp3");
+  }
+  
   audio.currentTime = 0;
-  audio.play();
+  // Handle the play promise to avoid unhandled promise rejection
+  const playPromise = audio.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      console.log("Audio playback failed:", error);
+    });
+  }
 });
 
 runClock();
