@@ -46,7 +46,7 @@ document.querySelector("#circle").addEventListener("click", () => {
   audio.currentTime = 0;
   // Handle the play promise to avoid unhandled promise rejection
   audio.play().catch(error => {
-    console.log("Audio playback failed:", error);
+    console.log("Audio playback failed (interaction required):", error.message);
   });
 });
 
